@@ -25,6 +25,7 @@
             <div class="navbar-dropdown is-boxed">
               <router-link class="navbar-item" to="/uuser">查看用户</router-link>
               <router-link class="navbar-item" to="/role">查看角色</router-link>
+              <router-link class="navbar-item" to="/user-notice">查看消息</router-link>
             </div>
           </div>
 

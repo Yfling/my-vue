@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
+
+// // 用户
+import UUser from './../components/User/UUser'
+import UserNotice from './../components/User/Notice'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
@@ -19,7 +23,6 @@ import Chapter from './../components/Chapter'
 import Test from './../components/Test'
 import ApplyFor from './../components/ApplyFor'
 import Label from './../components/label'
-import UUser from './../components/UUser'
 
 Vue.use(Router)
 
@@ -30,11 +33,19 @@ export default new Router({
       name: 'Hello',
       component: HelloWorld
     },
+    // 【用户】
     {
       path: '/uuser',
       name: '用户',
       component: UUser
     },
+    {
+      path: '/user-notice',
+      name: '用户-全部消息',
+      component: UserNotice
+    },
+
+    //
     {
       path: '/personal-information',
       name: '个人信息',
