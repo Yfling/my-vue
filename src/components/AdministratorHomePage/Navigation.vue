@@ -20,18 +20,11 @@
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
-              Docs
+              用户
             </a>
             <div class="navbar-dropdown is-boxed">
+              <router-link class="navbar-item" to="/uuser">查看用户</router-link>
               <router-link class="navbar-item" to="/role">查看角色</router-link>
-              <a class="navbar-item" >作业</a>
-              <a class="navbar-item" >考试</a>
-              <a class="navbar-item" >错题</a>
-              <a class="navbar-item" >测评</a>
-              <a class="navbar-item" >消息</a>
-              <hr class="navbar-divider">
-              <a class="navbar-item" >公告</a>
-              <a class="navbar-item is-active" >讨论</a>
             </div>
           </div>
 

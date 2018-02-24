@@ -9,22 +9,31 @@
 export default {
   data() {
     return {
+      token: null,
     };
   },
   components: {
   },
   methods: {
+    checkPermissions: function () {
+      const that = this;
+      axios({
+        method: 'get',
+        url: 'http://localhost:8000/api/v1/users/1/roles/',
+      }).then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
+    },
     get: function () {
       const that = this;
       console.log('登录')
       axios({
-        method: 'post',
+        method: 'get',
         url: 'http://localhost:8000/api/login',
         data: {
-          'email': 'admin@email.com',
-          'password': 'admin',
-          'type': 'mobile',
-          'captcha': 'ilhup',
+
         }
       }).then(res => {
         console.log(res)
@@ -52,6 +61,7 @@ export default {
     },
   },
   created() {
+    this.token = sessionStorage.getItem('token');
   },
   watch: {
   }

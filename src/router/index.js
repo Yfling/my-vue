@@ -19,7 +19,7 @@ import Chapter from './../components/Chapter'
 import Test from './../components/Test'
 import ApplyFor from './../components/ApplyFor'
 import Label from './../components/label'
-
+import UUser from './../components/UUser'
 
 Vue.use(Router)
 
@@ -29,6 +29,11 @@ export default new Router({
       path: '/he',
       name: 'Hello',
       component: HelloWorld
+    },
+    {
+      path: '/uuser',
+      name: '用户',
+      component: UUser
     },
     {
       path: '/personal-information',

@@ -1,12 +1,12 @@
-<!-- 查看角色 -->
+<!-- 查看用户 -->
 <template lang="html">
   <div class="box">
     <div>
       <div class="search-box">
-        <input class="input search-input" type="text" placeholder="请输入你要查看的角色">
-        <button class="button" type="button" name="button">查找角色</button>
+        <input class="input search-input" type="text" placeholder="请输入你要查看的用户">
+        <button class="button" type="button" name="button">查找用户</button>
       </div>
-        <button @click="showModal()" class="button add-role-button" type="button" name="button">添加角色</button>
+        <button @click="showModal()" class="button add-role-button" type="button" name="button">添加用户</button>
     </div>
     <table class="table">
       <thead>
@@ -26,7 +26,7 @@
           <td>{{ item.display_name }}</td>
           <td>{{ item.created_at }}</td>
           <td>{{ item.updated_at }}</td>
-          <td><button @click="deleteRole()" class="button" type="button" name="button">删除角色</button></td>
+          <td><button @click="deleteRole()" class="button" type="button" name="button">删除用户</button></td>
         </tr>
       </tbody>
     </table>
@@ -35,21 +35,21 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">添加角色</p>
+          <p class="modal-card-title">添加用户</p>
           <button @click="showModal()" class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
           <div class="box-item">
-            <label>角色名称</label>
-            <input class="input" type="text" placeholder="请输入英文角色名">
+            <label>用户名称</label>
+            <input class="input" type="text" placeholder="请输入英文用户名">
           </div>
 
           <div class="box-item">
-            <label>显示的角色名称</label>
-            <input class="input" type="text" placeholder="请输入中文角色名">
+            <label>显示的用户名称</label>
+            <input class="input" type="text" placeholder="请输入中文用户名">
           </div>
           <div class="box-item">
-            <label>角色描述</label>
+            <label>用户描述</label>
             <input class="input" type="text">
           </div>
         </section>
@@ -81,7 +81,7 @@ export default {
     },
     deleteRole: function () {
       const that = this;
-      let prompt = confirm("确认删除改角色吗？");
+      let prompt = confirm("确认删除改用户吗？");
       if (prompt) {
 
       }
