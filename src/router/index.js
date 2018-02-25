@@ -3,7 +3,10 @@ import Router from 'vue-router'
 
 // // 用户
 import UUser from './../components/User/UUser'
-import UserNotice from './../components/User/Notice'
+import View from './../components/User/View'
+// import UserNotice from './../components/User/Notice'
+// import UserMessage from './../components/User/Message'
+// import UserLecture from './../components/User/Lecture'
 
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
@@ -40,11 +43,25 @@ export default new Router({
       component: UUser
     },
     {
-      path: '/user-notice',
-      name: '用户-全部消息',
-      component: UserNotice
+      path: '/view',
+      name: '查看',
+      component: View
     },
-
+    // {
+    //   path: '/user-notice',
+    //   name: '用户-全部通知',
+    //   component: UserNotice
+    // },
+    // {
+    //   path: '/user-message',
+    //   name: '用户-全部消息',
+    //   component: UserMessage
+    // },
+    // {
+    //   path: '/user-lecture',
+    //   name: '用户-查看选课',
+    //   component: UserLecture
+    // },
     //
     {
       path: '/personal-information',

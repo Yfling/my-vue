@@ -1,17 +1,17 @@
-<!-- 查看通知 -->
+<!-- 查看消息 -->
 <template lang="html">
   <div class="box">
     <div>
       <div class="search-box">
-        <input class="input search-input" type="text" placeholder="请输入你要查看的通知">
-        <button class="button" type="button" name="button">查找通知</button>
+        <input class="input search-input" type="text" placeholder="请输入你要查看的消息">
+        <button class="button" type="button" name="button">查找消息</button>
       </div>
-        <button @click="showModal()" class="button add-role-button" type="button" name="button">添加通知</button>
+        <button @click="showModal()" class="button add-role-button" type="button" name="button">添加消息</button>
     </div>
     <div  v-for="item in data" class="message box">
       <div class="notification">
         <button class="delete"></button>
-        {{ item.data.data}}
+        {{ item.data}}
         <p>{{item.created_at}}</p>
       </div>
     </div>
@@ -20,7 +20,7 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">添加通知</p>
+          <p class="modal-card-title">添加消息</p>
           <button @click="showModal()" class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
@@ -30,7 +30,7 @@
           </div>
 
           <div class="box-item">
-            <label>通知内容</label>
+            <label>消息内容</label>
             <textarea class="textarea" type="text"></textarea>
           </div>
         </section>
@@ -49,44 +49,43 @@ export default {
   data() {
     return {
       "data": [
-        {
-            "id": "20d91d78-0075-4e6e-b7db-ec8fabe1e130",
-            "type": "App\\Notifications\\SystemNotification",
-            "notifiable_id": "1",
-            "notifiable_type": "App\\User",
-            "data": {
-                "data": "SystemNotification"
-            },
-            "read_at": null,
-            "created_at": "2018-01-05 17:53:30",
-            "updated_at": "2018-01-05 17:53:30"
-        },
-        {
-            "id": "e58f93d1-1c44-4271-8381-0f927b7bdda4",
-            "type": "App\\Notifications\\SystemNotification",
-            "notifiable_id": "1",
-            "notifiable_type": "App\\User",
-            "data": {
-                "data": "test"
-            },
-            "read_at": null,
-            "created_at": "2018-01-05 17:52:52",
-            "updated_at": "2018-01-05 17:52:52"
-        }
-    ],
+          {
+              "id": "174d155f-b469-460f-8776-933032ab436e",
+              "type": "App\\Notifications\\PrivateMessage",
+              "notifiable_id": "1",
+              "notifiable_type": "App\\User",
+              "data": "{\"notifiable_id\":null,\"data\":\"\\u8fd9\\u662f\\u79c1\\u4fe1\"}",
+              "read_at": null,
+              "created_at": "2018-01-21 12:30:53",
+              "updated_at": "2018-01-21 12:30:53"
+          },
+          {
+              "id": "174d155f-b469-460f-8776-933032ab436e",
+              "type": "App\\Notifications\\PrivateMessage",
+              "notifiable_id": "1",
+              "notifiable_type": "App\\User",
+              "data": "{\"notifiable_id\":null,\"data\":\"\\u8fd9\\u662f\\u79c1\\u4fe1\"}",
+              "read_at": null,
+              "created_at": "2018-01-21 12:30:53",
+              "updated_at": "2018-01-21 12:30:53"
+          }
+       ],
       isShowModal: false,
-      noticeData: null,
     }
   },
   components: {
   },
   methods: {
-    // 全部通知
+    showModal: function () {
+      const that = this;
+      that.isShowModal = !that.isShowModal;
+    },
+    // 全部消息
     getNotice: function () {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/users/1/notifications/',
+        url: 'http://localhost:8000/api/v1/users/1/messages/',
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -99,8 +98,6 @@ export default {
     },
   },
   created() {
-    this.token = sessionStorage.getItem('token');
-    this.getNotice();
   },
   watch: {
   }

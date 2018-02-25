@@ -3,23 +3,16 @@
     <!-- login -->
     <p class="title">用户登录</p>
     <div class="login-box">
-      <!-- <div class="select-box">
-        <span>用户类型&nbsp;&nbsp;</span>
-        <div>
-          <div class="select is-small">
-            <select v-on:change="changeRole($event)">
-              <option value="student">学生</option>
-              <option value="teacher">老师</option>
-              <option value="administrator">管理员</option>
-            </select>
-          </div>
-        </div>
-      </div> -->
+
       <input v-model="account" class="input form-control" placeholder="请输入你的账号/邮箱">
       <input v-model="password" type="password" class="input form-control" placeholder="密码">
       <input v-model="captcha" class="input form-control" placeholder="请输入验证码">
-      <!-- <img class="verification-code" src="https://fp.yangcong345.com/o_1c48qhluh1qf0r6v1ip765c1s799.png" alt=""> -->
-      <img class="verification-code" :src="captchaFigure" alt="">
+
+      <div class="code-box">
+        <img class="verification-code" :src="captchaFigure" alt="">
+        <a @click="getVerificationCode()" class="get-verification-code">获取验证码</a>
+      </div>
+
       <button @click="login()" type="button" class="button" name="button">登录</button>
       <div class="operate-box">
         <a>忘记密码</a><a @click="register()">注册</a>
@@ -83,17 +76,21 @@ export default {
           'email': that.account,
           'password': that.password,
           'type': 'mobile',
-          'captcha': that.captcha
+          'captcha': that.captcha,
         }
       }).then(res => {
         let token = res.data.data.token;
-        if (token) {
-          sessionStorage.setItem('token', token);
-          that.$emit('input', that.isShowLogin);
-        }
-
+        sessionStorage.setItem("token",`Bearer ${token}`);
+        that.$emit('input', false);
       }).catch(err => {
-        console.log(err)
+        let errorMsg = err.response.data.error;
+        if (errorMsg === 'Unauthorised') {
+          alert('密码错误，请重新输入');
+        }
+        if (errorMsg === 'Bad captcha！') {
+          alert('验证码错误，请重新输入');
+        }
+        that.getVerificationCode();
       })
     },
     getVerificationCode: function () {
@@ -101,13 +98,19 @@ export default {
       axios({
         method: 'post',
         url: 'http://localhost:8000/api/captchas',
+        responseType: 'arraybuffer',
         headers: {
+          'Content-type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json'
         },
-        data: {
-          purpose: 'LOGIN',
+        params: {
+          'purpose': 'LOGIN',
         }
       }).then(res => {
-        that.captchaFigure = res.data
+        that.captchaFigure = 'data:image/png;base64,' + btoa(
+          new Uint8Array(res.data)
+            .reduce((data, byte) => data + String.fromCharCode(byte), '')
+        );
       }).catch(err => {
         console.log(err)
       })
@@ -185,7 +188,15 @@ body {
   .verification-code {
     width: 130px;
     height: 30px;
-    margin: 0 auto 10px auto;
+    margin: 0 auto;
   }
+}
+.get-verification-code {
+  display: inline-block;
+  font-size: 12px;
+  // margin-bottom: 10px;
+}
+.code-box {
+  margin-bottom: 15px;
 }
 </style>

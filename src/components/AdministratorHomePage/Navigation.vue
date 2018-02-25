@@ -3,7 +3,7 @@
     <nav class="navbar is-info">
       <div class="navbar-brand">
         <a class="navbar-item">
-          <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+          <!-- <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"> -->
         </a>
         <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
           <span></span>
@@ -23,9 +23,12 @@
               用户
             </a>
             <div class="navbar-dropdown is-boxed">
-              <router-link class="navbar-item" to="/uuser">查看用户</router-link>
+              <router-link class="navbar-item" to="/view">查看</router-link>
+              <!-- <router-link class="navbar-item" to="/uuser">查看用户</router-link>
               <router-link class="navbar-item" to="/role">查看角色</router-link>
               <router-link class="navbar-item" to="/user-notice">查看消息</router-link>
+              <router-link class="navbar-item" to="/user-message">查看通知</router-link>
+              <router-link class="navbar-item" to="/user-lecture">查看选课</router-link> -->
             </div>
           </div>
 
