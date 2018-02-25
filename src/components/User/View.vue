@@ -14,7 +14,7 @@
 
     <div class="">
       <u-user v-show="currentTag === 'user'"></u-user>
-      <lecture v-show="currentTag === 'role'"></lecture>
+      <role v-show="currentTag === 'role'"></role>
       <message v-show="currentTag === 'message'"></message>
       <notice v-show="currentTag === 'notice'"></notice>
       <lecture v-show="currentTag === 'lecture'"></lecture>
@@ -27,6 +27,7 @@ import UUser from './UUser'
 import Lecture from './Lecture'
 import Message from './Message'
 import Notice from './Notice'
+import Role from './Role'
 
 export default {
   data() {
@@ -39,6 +40,7 @@ export default {
     Lecture,
     Message,
     Notice,
+    Role,
   },
   methods: {
 

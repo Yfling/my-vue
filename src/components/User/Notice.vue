@@ -1,13 +1,6 @@
 <!-- 查看通知 -->
 <template lang="html">
   <div class="box">
-    <div>
-      <div class="search-box">
-        <input class="input search-input" type="text" placeholder="请输入你要查看的通知">
-        <button class="button" type="button" name="button">查找通知</button>
-      </div>
-        <button @click="showModal()" class="button add-role-button" type="button" name="button">添加通知</button>
-    </div>
     <div  v-for="item in data" class="message box">
       <div class="notification">
         <button class="delete"></button>
@@ -15,31 +8,6 @@
         <p>{{item.created_at}}</p>
       </div>
     </div>
-
-    <div class="modal" :class="{'is-active' : isShowModal}">
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">添加通知</p>
-          <button @click="showModal()" class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-          <div class="box-item">
-            <label>发送到</label>
-            <input class="input" type="text" placeholder="需要发送的用户名">
-          </div>
-
-          <div class="box-item">
-            <label>通知内容</label>
-            <textarea class="textarea" type="text"></textarea>
-          </div>
-        </section>
-        <footer class="modal-card-foot">
-          <button class="button is-success">确认</button>
-          <button  @click="showModal()" class="button">取消</button>
-        </footer>
-      </div>
-
     </div>
   </div>
 </template>
