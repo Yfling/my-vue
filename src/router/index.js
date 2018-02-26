@@ -12,11 +12,13 @@ import Permission from './../components/Role/Permission'
 // 权限
 import PPermission from './../components/Permission/PPermission'
 
+// 消息
+import MMessage from './../components/Message/MMessage'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
-import MMessage from './../components/MMessage'
 import NNotice from './../components/NNotice'
 import Organization from './../components/Organization'
 import Course from './../components/Course'
