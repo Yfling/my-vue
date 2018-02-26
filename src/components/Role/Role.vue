@@ -117,7 +117,6 @@ export default {
   created() {
     this.token = sessionStorage.getItem('token');
     this.getRole();
-    // this.checkPermissions();
   },
   watch: {
   }

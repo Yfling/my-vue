@@ -7,14 +7,15 @@ import View from './../components/User/View'
 
 // 角色
 import Role from './../components/Role/Role'
+import Permission from './../components/Role/Permission'
 
+// 权限
+import PPermission from './../components/Permission/PPermission'
 
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
-import Permission from './../components/Permission'
-import PPermission from './../components/PPermission'
 import MMessage from './../components/MMessage'
 import NNotice from './../components/NNotice'
 import Organization from './../components/Organization'

@@ -4,7 +4,7 @@
     <div>
       <div class="search-box">
         <input class="input search-input" type="text" placeholder="请输入你要查看的权限">
-        <button class="button" type="button" name="button">查找权限</button>
+        <button @click="searchPermission()" class="button" type="button" name="button">查找权限</button>
       </div>
         <button @click="showModal()" class="button add-role-button" type="button" name="button">添加权限</button>
         <button class="button add-role-button" type="button" name="button">同步权限</button>
@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in data">
+        <tr v-for="item in permissionData">
           <td>{{ item.id }}</td>
           <td>{{ item.name }}</td>
           <td>{{ item.display_name }}</td>
@@ -66,32 +66,8 @@
 export default {
   data() {
     return {
-      "data": [
-        {
-          "id": 16,
-          "name": "message-destroy",
-          "display_name": "Destroy A Message",
-          "description": "Destroy A Message",
-          "created_at": "2018-01-27 14:17:48",
-          "updated_at": "2018-01-27 14:17:48",
-          "pivot": {
-            "role_id": "1",
-            "permission_id": "16"
-          }
-        },
-        {
-          "id": 29,
-          "name": "lecture-store",
-          "display_name": "Create Lecture",
-          "description": "Create Lecture",
-          "created_at": "2018-01-27 14:17:48",
-          "updated_at": "2018-01-27 14:17:48",
-          "pivot": {
-            "role_id": "1",
-            "permission_id": "29"
-          }
-        }
-      ],
+      token: null,
+      permissionData: null,
       isShowModal: false,
     }
   },
@@ -108,9 +84,41 @@ export default {
       if (prompt) {
 
       }
+    },
+    getPermission: function () {
+      const that = this;
+      axios({
+        method: 'get',
+        url: 'http://localhost:8000/api/v1/roles/1/permissions',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': that.token
+        }
+      }).then(res => {
+        that.permissionData = res.data.data;
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    searchPermission: function () {
+      const that = this;
+      axios({
+        method: 'get',
+        url: 'http://localhost:8000/api/v1/roles/1/permissions',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': that.token
+        }
+      }).then(res => {
+        that.permissionData = res.data.data;
+      }).catch(err => {
+        console.log(err)
+      })
     }
   },
   created() {
+    this.token = sessionStorage.getItem('token');
+    this.getPermission();
   },
   watch: {
   }
