@@ -9,6 +9,8 @@
         <option value="message">查看消息</option>
         <option value="notice">查看通知</option>
         <option value="lecture">查看选课</option>
+        <option value="permission">查看权限</option>
+        <option value="apply-for">查看申请</option>
       </select>
     </div>
 
@@ -18,6 +20,8 @@
       <message v-show="currentTag === 'message'"></message>
       <notice v-show="currentTag === 'notice'"></notice>
       <lecture v-show="currentTag === 'lecture'"></lecture>
+      <permission v-show="currentTag === 'permission'"></permission>
+      <apply-for v-show="currentTag === 'apply-for'"></apply-for>
     </div>
   </div>
 </template>
@@ -28,6 +32,8 @@ import Lecture from './Lecture'
 import Message from './Message'
 import Notice from './Notice'
 import Role from './Role'
+import Permission from './Permission'
+import ApplyFor from './ApplyFor'
 
 export default {
   data() {
@@ -41,6 +47,8 @@ export default {
     Message,
     Notice,
     Role,
+    Permission,
+    ApplyFor,
   },
   methods: {
 

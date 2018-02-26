@@ -24,11 +24,6 @@
             </a>
             <div class="navbar-dropdown is-boxed">
               <router-link class="navbar-item" to="/view">查看</router-link>
-              <!-- <router-link class="navbar-item" to="/uuser">查看用户</router-link>
-              <router-link class="navbar-item" to="/role">查看角色</router-link>
-              <router-link class="navbar-item" to="/user-notice">查看消息</router-link>
-              <router-link class="navbar-item" to="/user-message">查看通知</router-link>
-              <router-link class="navbar-item" to="/user-lecture">查看选课</router-link> -->
             </div>
           </div>
 
@@ -37,9 +32,9 @@
               角色
             </a>
             <div class="navbar-dropdown is-boxed">
-              <router-link class="navbar-item" to="/role">角色操作</router-link>
-              <router-link class="navbar-item" to="/user">用户</router-link>
+              <router-link class="navbar-item" to="/role">角色</router-link>
               <router-link class="navbar-item" to="/permission">权限</router-link>
+              <router-link class="navbar-item" to="/user">用户</router-link>
             </div>
           </div>
 

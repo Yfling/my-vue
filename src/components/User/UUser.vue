@@ -27,7 +27,7 @@
           <td>{{ item.created_at }}</td>
           <td>{{ item.updated_at }}</td>
           <td>
-            <button @click="deleteuser(index)" class="button" type="button" name="button">删除用户</button>
+            <button @click="deleteUser(index)" class="button" type="button" name="button">删除用户</button>
             <button @click="showEditModal(index)" class="button" type="button" name="button">编辑用户</button>
             <!-- <button @click="showEditModal(index)" class="button" type="button" name="button">更改密码</button> -->
           </td>
@@ -64,7 +64,7 @@ export default {
       that.isShowModal = !that.isShowModal;
     },
     // 删除用户
-    deleteuser: function (index) {
+    deleteUser: function (index) {
       const that = this;
       let id = that.userData[index]['id'];
       let prompt = confirm("确认删除改用户吗？");
@@ -135,7 +135,7 @@ export default {
       const that = this;
       that.isShowEditModal = true;
       that.currentUserData = that.userData[index];
-      //  
+      //
     }
   },
   created() {

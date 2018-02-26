@@ -4,14 +4,14 @@ import Router from 'vue-router'
 // // 用户
 import UUser from './../components/User/UUser'
 import View from './../components/User/View'
-// import UserNotice from './../components/User/Notice'
-// import UserMessage from './../components/User/Message'
-// import UserLecture from './../components/User/Lecture'
+
+// 角色
+import Role from './../components/Role/Role'
+
 
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
-import Role from './../components/Role'
 import User from './../components/User'
 import Permission from './../components/Permission'
 import PPermission from './../components/PPermission'
@@ -47,22 +47,7 @@ export default new Router({
       name: '查看',
       component: View
     },
-    // {
-    //   path: '/user-notice',
-    //   name: '用户-全部通知',
-    //   component: UserNotice
-    // },
-    // {
-    //   path: '/user-message',
-    //   name: '用户-全部消息',
-    //   component: UserMessage
-    // },
-    // {
-    //   path: '/user-lecture',
-    //   name: '用户-查看选课',
-    //   component: UserLecture
-    // },
-    //
+
     {
       path: '/personal-information',
       name: '个人信息',
