@@ -24,12 +24,16 @@ import Organization from './../components/Organization/Organization'
 // 【组织-成员】
 import Member from './../components/Member/Member'
 
+// 课程
+import Course from './../components/Course/Course'
+
+// 授课
+import Teaching from './../components/Teaching/Teaching'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
-import Course from './../components/Course/Course'
-import Teaching from './../components/Teaching'
 import Question from './../components/Question'
 import ExaminationPaper from './../components/ExaminationPaper'
 import Chapter from './../components/Chapter'
