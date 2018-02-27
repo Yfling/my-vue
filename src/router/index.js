@@ -21,6 +21,9 @@ import NNotice from './../components/Notice/NNotice'
 // 组织
 import Organization from './../components/Organization/Organization'
 
+// 【组织-成员】
+import Member from './../components/Member/Member'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
@@ -104,6 +107,12 @@ export default new Router({
       path: '/organization',
       name: '组织',
       component: Organization
+    },
+    // 【组织】- 成员
+    {
+      path: '/member',
+      name: '成员',
+      component: Member
     },
     // 课程
     {
