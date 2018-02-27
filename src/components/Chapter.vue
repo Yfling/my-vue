@@ -28,7 +28,7 @@
         <tr v-for="item in data">
           <td>{{ item.id }}</td>
           <td>{{ item.name }}</td>
-          <td>{{ item.describe }}</td>
+          <td> {{ item.description }}</td>
           <td>{{ item.question_type }}</td>
           <td>{{ item.score }}</td>
           <td>{{ item.number }}</td>
@@ -79,7 +79,7 @@ export default {
           {
               "id": 8,
               "name": "选择题12312",
-              "describe": "单选",
+              "": "单选",
               "question_type": "SINGLE_CHOICE",
               "score": 100,
               "number": 100,

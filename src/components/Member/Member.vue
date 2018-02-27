@@ -28,7 +28,7 @@
           <td>{{ item.id }}</td>
           <td>{{ item.name }}</td>
           <td>{{ item.creator_id }}</td>
-          <td>{{ item.describe}}</td>
+          <td> {{ item.description }}</td>
           <td>{{ item.max }}</td>
           <td>{{ item.current }}</td>
           <td>{{ item.created_at }}</td>
@@ -44,7 +44,6 @@
 
     <add-member ref="addMember"></add-member>
     <synchronize-member ref="synchronizeMember"  :edit-data="editData"></synchronize-member>
-    <synchronize-member ref="synchronizeMember"></synchronize-member>
   </div>
 </template>
 
@@ -141,7 +140,6 @@ export default {
           console.log(err)
         })
       }
-
     }
   },
   created() {

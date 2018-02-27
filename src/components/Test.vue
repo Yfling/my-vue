@@ -18,7 +18,7 @@
           "exam_type": "OPEN",
           "score": 100,
           "min": 1,
-          "describe": "单选",
+          "": "单选",
           "allowable_lecture_ids": "0",
           "allowable_orgaization_ids": "0",
           "allowable_user_ids": "0",
@@ -49,7 +49,7 @@
           <td>{{ item.exam_type }}</td>
           <td>{{ item.score }}</td>
           <td>{{ item.min }}</td>
-          <td>{{ item.describe }}</td>
+          <td> {{ item.description }}</td>
           <td>{{ item.created_at }}</td>
           <td>{{ item.updated_at }}</td>
           <td>
@@ -101,7 +101,7 @@ export default {
               "exam_type": "OPEN",
               "score": 100,
               "min": 1,
-              "describe": "单选",
+              "": "单选",
               "allowable_lecture_ids": "0",
               "allowable_orgaization_ids": "0",
               "allowable_user_ids": "0",

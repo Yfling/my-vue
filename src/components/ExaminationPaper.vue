@@ -32,7 +32,7 @@
           <td>{{ item.title }}</td>
           <td>{{ item.score }}</td>
           <td>{{ item.min }}</td>
-          <td>{{ item.describe }}</td>
+          <td> {{ item.description }}</td>
           <td>{{ item.sections }}</td>
           <td>{{ item.tags }}</td>
           <td>{{ item.created_at }}</td>
@@ -84,7 +84,7 @@ export default {
             "title": "英语等级考试1",
             "score": "100",
             "min": "120",
-            "describe": "英语考试",
+            "": "英语考试",
             "sections": null,
             "tags": null,
             "created_at": "2018-01-27 14:22:19",
@@ -96,7 +96,7 @@ export default {
             "title": "英语等级考试",
             "score": "100",
             "min": "120",
-            "describe": "英语考试",
+            "": "英语考试",
             "sections": null,
             "tags": null,
             "created_at": "2018-01-27 14:39:14",
@@ -108,7 +108,7 @@ export default {
             "title": "英语等级考试",
             "score": "100",
             "min": "120",
-            "describe": "英语考试",
+            "": "英语考试",
             "sections": null,
             "tags": null,
             "created_at": "2018-01-27 14:40:12",

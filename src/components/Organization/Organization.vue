@@ -28,7 +28,7 @@
           <td>{{ item.id }}</td>
           <td>{{ item.name }}</td>
           <td>{{ item.creator_id }}</td>
-          <td>{{ item.describe}}</td>
+          <td> {{ item.description }}</td>
           <td>{{ item.max }}</td>
           <td>{{ item.current }}</td>
           <td>{{ item.created_at }}</td>
@@ -61,7 +61,7 @@ export default {
               "id": 2,
               "name": "1班1111",
               "creator_id": "1",
-              "describe": "职教师资1班",
+              "": "职教师资1班",
               "max": "234",
               "current": "1",
               "created_at": "2018-01-13 08:04:13",

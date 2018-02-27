@@ -23,7 +23,7 @@
       </div>
       <div class="label-box">
         <label class="label">描述：</label>
-        <input class="input" v-model:describe="currentOrganizationData.describe">
+        <input class="input" v-model:="currentOrganizationData.description">
       </div>
       <div class="label-box">
         <label class="label">最大值：</label>
@@ -58,7 +58,7 @@ export default {
         id: null,
         name: null,
         creator_id: null,
-        describe: null,
+        description: null,
         max: null,
         current: null,
         created_at: null,
@@ -92,7 +92,7 @@ export default {
         body: {
           // ?? 传入的是String or Number
           name: that.organizationData.name,
-          describe: that.organizationData.describe,
+          description: that.organizationData.description,
           max: that.organizationData.max,
         }
       }).then(res => {

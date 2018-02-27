@@ -34,7 +34,7 @@
           <td>{{ item.course_id }}</td>
           <td>{{ item.allowable_organization_ids }}</td>
           <td>{{ item.allowable_user_ids }}</td>
-          <td>{{ item.describe }}</td>
+          <td> {{ item.description }}</td>
           <td>{{ item.max }}</td>
           <td>{{ item.current }}</td>
           <td>{{ item.created_at }}</td>
@@ -87,7 +87,7 @@ export default {
               "course_id": "3",
               "allowable_organization_ids": "1",
               "allowable_user_ids": "",
-              "describe": "这是描述",
+              "": "这是描述",
               "max": "20",
               "current": "1",
               "created_at": "2018-01-19 16:14:27",
