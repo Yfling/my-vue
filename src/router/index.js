@@ -18,11 +18,13 @@ import MMessage from './../components/Message/MMessage'
 // 通知
 import NNotice from './../components/Notice/NNotice'
 
+// 组织
+import Organization from './../components/Organization/Organization'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
-import Organization from './../components/Organization'
 import Course from './../components/Course'
 import Teaching from './../components/Teaching'
 import Question from './../components/Question'
