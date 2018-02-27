@@ -15,11 +15,13 @@ import PPermission from './../components/Permission/PPermission'
 // 消息
 import MMessage from './../components/Message/MMessage'
 
+// 通知
+import NNotice from './../components/Notice/NNotice'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
-import NNotice from './../components/NNotice'
 import Organization from './../components/Organization'
 import Course from './../components/Course'
 import Teaching from './../components/Teaching'
