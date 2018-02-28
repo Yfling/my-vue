@@ -73,16 +73,16 @@ export default {
   data() {
     return {
       labelData: [
-          {
-              "id": "53e20281-90ee-4d1e-824e-ac45ac138446",
-              "type": "App\\Notifications\\ApplicationNotification",
-              "notifiable_id": "1",
-              "notifiable_type": "App\\User",
-              "data": "{\"notifiable_id\":\"1\",\"action\":\"create\",\"resource_id\":\"1\",\"resource_type\":\"Organization\",\"data\":\"\\u8fd9\\u662f\\u79c1\\u4fe1\"}",
-              "read_at": null,
-              "created_at": "2018-01-21 14:04:22",
-              "updated_at": "2018-01-21 14:04:22"
-          }
+        {
+            "id": "53e20281-90ee-4d1e-824e-ac45ac138446",
+            "type": "App\\Notifications\\ApplicationNotification",
+            "notifiable_id": "1",
+            "notifiable_type": "App\\User",
+            "data": "{\"notifiable_id\":\"1\",\"action\":\"create\",\"resource_id\":\"1\",\"resource_type\":\"Organization\",\"data\":\"\\u8fd9\\u662f\\u79c1\\u4fe1\"}",
+            "read_at": null,
+            "created_at": "2018-01-21 14:04:22",
+            "updated_at": "2018-01-21 14:04:22"
+        }
       ],
       isShowModal: false,
       token: null,

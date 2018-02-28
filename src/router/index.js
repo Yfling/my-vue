@@ -45,12 +45,13 @@ import ApplyFor from './../components/ApplyFor/ApplyFor'
 // 标签
 import Label from './../components/Label/Label'
 
+// 考试
+import Test from './../components/Test/Test'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
-
-import Test from './../components/Test'
 
 Vue.use(Router)
 
