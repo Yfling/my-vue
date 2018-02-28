@@ -42,13 +42,15 @@ import Chapter from './../components/Chapter/Chapter'
 // 申请
 import ApplyFor from './../components/ApplyFor/ApplyFor'
 
+// 标签
+import Label from './../components/Label/Label'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
 
 import Test from './../components/Test'
-import Label from './../components/label'
 
 Vue.use(Router)
 
