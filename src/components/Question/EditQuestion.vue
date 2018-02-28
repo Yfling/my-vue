@@ -70,7 +70,7 @@ export default {
   },
   props: [
     'editData',
-  ]
+  ],
   methods: {
     switchModal: function () {
       const that = this;

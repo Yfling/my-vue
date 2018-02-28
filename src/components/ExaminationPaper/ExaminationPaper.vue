@@ -6,7 +6,7 @@
         <input class="input search-input" type="text" placeholder="请输入你要查看的试卷">
         <button class="button" type="button" name="button">查找试卷</button>
       </div>
-        <button @click="showModal()" class="button add-role-button" type="button" name="button">添加试卷</button>
+        <button @click="addExaminationPaper()" class="button add-role-button" type="button" name="button">添加试卷</button>
         <button class="button add-role-button" type="button" name="button">同步试卷</button>
     </div>
     <table class="table">
@@ -26,7 +26,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in data">
+        <tr v-for="(item,index) in data">
           <td>{{ item.id }}</td>
           <td>{{ item.creator_id }}</td>
           <td>{{ item.title }}</td>
@@ -38,42 +38,22 @@
           <td>{{ item.created_at }}</td>
           <td>{{ item.updated_at }}</td>
           <td>
-            <button @click="deleteRole()" class="button" type="button" name="button">删除试卷</button>
-            <button  class="button" type="button" name="button">编辑试卷</button>
+            <button @click="deleteExaminationPaper(index)" class="button" type="button" name="button">删除试卷</button>
+            <button @click="editExaminationPaper(index)" class="button" type="button" name="button">编辑试卷</button>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <div class="modal" :class="{'is-active' : isShowModal}">
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">添加试卷</p>
-          <button @click="showModal()" class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-          <div class="box-item">
-            <label>试卷名称</label>
-            <input class="input" type="text" placeholder="请输入试卷名">
-          </div>
-
-          <div class="box-item">
-            <label>试卷名称</label>
-            <input class="input" type="text">
-          </div>
-        </section>
-        <footer class="modal-card-foot">
-          <button class="button is-success">确认</button>
-          <button  @click="showModal()" class="button">取消</button>
-        </footer>
-      </div>
-
+    <add-examination-paper ref="addExaminationPaper"></add-examination-paper>
+    <edit-examination-paper ref="editExaminationPaper" v-bind:edit-data="editData"></edit-examination-paper>
     </div>
   </div>
 </template>
 
 <script>
+import AddExaminationPaper from './AddExaminationPaper'
+import EditExaminationPaper from './EditExaminationPaper'
 export default {
   data() {
     return {
@@ -116,24 +96,69 @@ export default {
         }
       ],
       isShowModal: false,
+      token: null,
+      editData: null,
     }
   },
   components: {
+    AddExaminationPaper,
+    EditExaminationPaper,
   },
   methods: {
     showModal: function () {
       const that = this;
       that.isShowModal = !that.isShowModal;
     },
-    deleteRole: function () {
+    deleteExaminationPaper: function (index) {
       const that = this;
-      let prompt = confirm("确认删除改试卷吗？");
+      let id = that.examinationPaperData[index]['id'];
+      let prompt = confirm("确认删除该试卷吗？");
       if (prompt) {
-
+        axios({
+          method: 'delete',
+          url: `http://localhost:8000/api/v1/papers/${id}`,
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': that.token
+          }
+        }).then(res => {
+          // that.examinationPaperData = res.data.data;
+        }).catch(err => {
+          console.log(err)
+        })
       }
-    }
+    },
+    getExaminationPaper: function () {
+      const that = this;
+      axios({
+        method: 'get',
+        url: `http://localhost:8000/api/v1/papers`,
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': that.token
+        }
+      }).then(res => {
+        debugger
+        that.examinationPaperData = [];
+        that.examinationPaperData.push(res.data.data);
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    addExaminationPaper: function () {
+      const that = this;
+      that.$refs.addExaminationPaper.switchModal();
+    },
+    editExaminationPaper: function (index) {
+      const that = this;
+      that.editData = that.examinationData[index];
+      // that.$refs.addExaminationPaper.switchModal();
+      that.$refs.editExaminationPaper.switchModal();
+    },
   },
   created() {
+    this.token = sessionStorage.getItem('token');
+    this.getExaminationPaper();
   },
   watch: {
   }

@@ -33,12 +33,14 @@ import Teaching from './../components/Teaching/Teaching'
 // 问题
 import Question from './../components/Question/Question'
 
+// 试卷
+import ExaminationPaper from './../components/ExaminationPaper/ExaminationPaper'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
 
-import ExaminationPaper from './../components/ExaminationPaper'
 import Chapter from './../components/Chapter'
 import Test from './../components/Test'
 import ApplyFor from './../components/ApplyFor'
