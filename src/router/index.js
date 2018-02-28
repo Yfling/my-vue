@@ -36,12 +36,14 @@ import Question from './../components/Question/Question'
 // 试卷
 import ExaminationPaper from './../components/ExaminationPaper/ExaminationPaper'
 
+// 章节
+import Chapter from './../components/Chapter/Chapter'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
 
-import Chapter from './../components/Chapter'
 import Test from './../components/Test'
 import ApplyFor from './../components/ApplyFor'
 import Label from './../components/label'

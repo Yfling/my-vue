@@ -29,7 +29,7 @@
         </div>
       </section>
       <footer class="modal-card-foot">
-        <button @click="editChapter()" class="button is-success">确认</button>
+        <button class="button is-success">确认</button>
         <button  @click="switchModal()" class="button">取消</button>
       </footer>
     </div>
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       isShowModal: false,
-      examinationPaperData: {
+      chapterData: {
         title: null,
         score: null,
         min: null,
@@ -60,7 +60,7 @@ export default {
       const that = this;
       that.isShowModal = !that.isShowModal;
     },
-    editQuestion: function () {
+    addQuestion: function () {
       const that = this;
       axios({
         method: 'post',
@@ -70,12 +70,12 @@ export default {
           'Authorization': that.token
         },
         body: {
-          question_type: that.examinationPaperData.question_type,
-          level_type: that.examinationPaperData.level_type,
-          title: that.examinationPaperData.title,
-          body: that.examinationPaperData.body,
-          answer: that.examinationPaperData.answer,
-          answer_comment: that.examinationPaperData.answer_comment
+          question_type: that.chapterData.question_type,
+          level_type: that.chapterData.level_type,
+          title: that.chapterData.title,
+          body: that.chapterData.body,
+          answer: that.chapterData.answer,
+          answer_comment: that.chapterData.answer_comment
         }
       }).then(res => {
       }).catch(err => {
