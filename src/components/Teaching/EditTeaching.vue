@@ -49,7 +49,7 @@ export default {
       let id = that.teachingData.id;
       axios({
         method: 'put',
-        url: `http://localhost:8000/api/v1/lectures/${id}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/lectures/${id}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

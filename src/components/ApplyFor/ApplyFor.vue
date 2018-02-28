@@ -84,7 +84,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/applications/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/applications/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -101,7 +101,7 @@ export default {
       let id = that.searchKey;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/applications/${id}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/applications/${id}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -117,13 +117,13 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/applications/`,
+        url: `${this.GLOBAL.localDomain}/api/v1/applications/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.applyForData = [];
         that.applyForData.push(res.data.data);
       }).catch(err => {
@@ -145,13 +145,13 @@ export default {
       let id = that.applyForData[index].id;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/applications/${id}/accept`,
+        url: `${this.GLOBAL.localDomain}/api/v1/applications/${id}/accept`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.applyForData = [];
         that.applyForData.push(res.data.data);
       }).catch(err => {
@@ -163,13 +163,13 @@ export default {
       let id = that.applyForData[index].id;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/applications/${id}/reject`,
+        url: `${this.GLOBAL.localDomain}/api/v1/applications/${id}/reject`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.applyForData = [];
         that.applyForData.push(res.data.data);
       }).catch(err => {

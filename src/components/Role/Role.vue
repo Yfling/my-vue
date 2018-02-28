@@ -65,7 +65,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/roles/',
+        url: `${this.GLOBAL.localDomain}/api/v1/roles/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -81,7 +81,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/roles/${that.searchKey}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/roles/${that.searchKey}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -101,7 +101,7 @@ export default {
       if (prompt) {
         axios({
           method: 'put',
-          url: `http://localhost:8000/api/v1/roles/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/roles/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token

@@ -62,7 +62,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/messages/${that.messageId}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/messages/${that.messageId}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -82,7 +82,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/messages/',
+        url: `${this.GLOBAL.localDomain}/api/v1/messages/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -97,7 +97,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/messages/${that.messageId}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/messages/${that.messageId}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

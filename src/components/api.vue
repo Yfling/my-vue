@@ -19,7 +19,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/users/1/roles/',
+        url: `${this.GLOBAL.localDomain}/api/v1/users/1/roles/`,
       }).then(res => {
         console.log(res)
       }).catch(err => {
@@ -31,7 +31,7 @@ export default {
       console.log('登录')
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/login',
+        url: `${this.GLOBAL.localDomain}/api/login`,
         data: {
 
         }
@@ -46,7 +46,7 @@ export default {
       console.log('登录')
       axios({
         method: 'post',
-        url: 'http://localhost:8000/api/login',
+        url: `${this.GLOBAL.localDomain}/api/login`,
         data: {
           'email': 'admin@email.com',
           'password': 'admin',

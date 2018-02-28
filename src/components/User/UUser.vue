@@ -88,13 +88,14 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/users/',
+        url: `${this.GLOBAL.localDomain}/api/v1/users/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
         that.userData = res.data.data;
+
       }).catch(err => {
         console.log(err)
       })
@@ -104,7 +105,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/users/${that.searchKey}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/users/${that.searchKey}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -120,7 +121,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/users/1/users/',
+        url: `${this.GLOBAL.localDomain}/api/v1/users/1/users/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

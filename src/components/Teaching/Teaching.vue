@@ -92,14 +92,14 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/lectures',
+        url: `${this.GLOBAL.localDomain}/api/v1/lectures`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
         that.teachingData = res.data.data;
-        debugger
+         
       }).catch(err => {
         console.log(err)
       })
@@ -108,7 +108,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/lectures/${that.searchKey}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/lectures/${that.searchKey}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -127,7 +127,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/lectures/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/lectures/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token

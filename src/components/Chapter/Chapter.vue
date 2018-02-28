@@ -89,7 +89,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/papers/1/sections/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/papers/1/sections/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -106,7 +106,7 @@ export default {
       let id = that.searchKey;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/papers/1/sections/${id}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/papers/1/sections/${id}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -122,13 +122,13 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/papers/1/sections/`,
+        url: `${this.GLOBAL.localDomain}/api/v1/papers/1/sections/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.chapterData = [];
         that.chapterData.push(res.data.data);
       }).catch(err => {

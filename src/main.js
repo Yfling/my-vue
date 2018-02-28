@@ -5,6 +5,10 @@ import App from './App'
 import Vuex from 'vuex';
 import router from './router'
 
+// 引入全局变量
+import global_ from './components/Global'//引用文件
+Vue.prototype.GLOBAL = global_//挂载到Vue实例上面
+
 Vue.config.productionTip = false
 Vue.use(Vuex);
 

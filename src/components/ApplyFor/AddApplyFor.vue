@@ -63,7 +63,7 @@ export default {
       const that = this;
       axios({
         method: 'post',
-        url: `http://localhost:8000/api/v1/applications/`,
+        url: `${this.GLOBAL.localDomain}/api/v1/applications/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

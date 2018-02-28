@@ -52,7 +52,7 @@ export default {
       const that = this;
       axios({
         method: 'post',
-        url: `http://localhost:8000/api/v1/organizations`,
+        url: `${this.GLOBAL.localDomain}/api/v1/organizations`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -62,7 +62,7 @@ export default {
         //   users: that.memberData.
         }
       }).then(res => {
-        debugger
+         
       }).catch(err => {
         console.log(err)
       })

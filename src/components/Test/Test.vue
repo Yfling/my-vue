@@ -94,7 +94,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/exams/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/exams/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -111,7 +111,7 @@ export default {
       let id = that.searchKey;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/exams/${id}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/exams/${id}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -127,13 +127,13 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/exams/`,
+        url: `${this.GLOBAL.localDomain}/api/v1/exams/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.testData = [];
         that.testData.push(res.data.data);
       }).catch(err => {
@@ -155,13 +155,13 @@ export default {
       let id = that.testData[index].id;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/exams/${id}/start`,
+        url: `${this.GLOBAL.localDomain}/api/v1/exams/${id}/start`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.testData = [];
         that.testData.push(res.data.data);
       }).catch(err => {
@@ -173,13 +173,13 @@ export default {
       let id = that.testData[index].id;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/exams/${id}/stop`,
+        url: `${this.GLOBAL.localDomain}/api/v1/exams/${id}/stop`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.testData = [];
         that.testData.push(res.data.data);
       }).catch(err => {

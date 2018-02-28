@@ -93,7 +93,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/courses/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/courses/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -108,14 +108,14 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/courses',
+        url: `${this.GLOBAL.localDomain}/api/v1/courses`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
         that.courseData = res.data.data;
-        // debugger
+        //  
       }).catch(err => {
         console.log(err)
       })

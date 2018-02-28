@@ -81,7 +81,7 @@ export default {
       let id = that.editData.id;
       axios({
         method: 'post',
-        url: `http://localhost:8000/api/v1/questions/${id}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/questions/${id}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

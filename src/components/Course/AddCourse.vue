@@ -60,7 +60,7 @@ export default {
       that.courseData.max = Number(that.courseData.max);
       axios({
         method: 'post',
-        url: `http://localhost:8000/api/v1/courses`,
+        url: `${this.GLOBAL.localDomain}/api/v1/courses`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

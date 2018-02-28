@@ -52,7 +52,7 @@ export default {
       that.organizationData.max = Number(that.organizationData.max);
       axios({
         method: 'post',
-        url: `http://localhost:8000/api/v1/organizations`,
+        url: `${this.GLOBAL.localDomain}/api/v1/organizations`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -62,7 +62,7 @@ export default {
           max: that.organizationData.max
         }
       }).then(res => {
-        debugger
+         
       }).catch(err => {
         console.log(err)
       })

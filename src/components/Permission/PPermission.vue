@@ -69,7 +69,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: 'http://localhost:8000/api/v1/roles/1/permissions',
+          url: `${this.GLOBAL.localDomain}/api/v1/roles/1/permissions`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -85,7 +85,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/roles/1/permissions',
+        url: `${this.GLOBAL.localDomain}/api/v1/roles/1/permissions`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -100,7 +100,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/permissions/${that.permissionId}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/permissions/${that.permissionId}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

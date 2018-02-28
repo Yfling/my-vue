@@ -84,7 +84,7 @@ export default {
       id = that.currentOrganizationData.id;
       axios({
         method: 'put',
-        url: `http://localhost:8000/api/v1/organizations/${id}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/organizations/${id}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -96,7 +96,7 @@ export default {
           max: that.organizationData.max,
         }
       }).then(res => {
-        debugger
+         
       }).catch(err => {
         console.log(err)
       })

@@ -53,7 +53,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/users/1/roles/',
+        url: `${this.GLOBAL.localDomain}/api/v1/users/1/roles/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -69,7 +69,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/users/1/roles/',
+        url: `${this.GLOBAL.localDomain}/api/v1/users/1/roles/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

@@ -2,17 +2,13 @@
   <div class="">
     <!-- <a @click="setToken()" class="button">session token</a> -->
     <login v-if="isShowLogin" v-model="loginStatus"></login>
-    <administrator-home-page v-else></administrator-home-page>
-    <!-- <teacher-home-page></teacher-home-page> -->
-    <!-- <student-home-page></student-home-page> -->
+    <home-page v-else></home-page>
   </div>
 </template>
 
 <script>
 import Login from './components/Login.vue'
-import TeacherHomePage from './components/TeacherHomePage/HomePage.vue'
-import StudentHomePage from './components/StudentHomePage/HomePage.vue'
-import AdministratorHomePage from './components/AdministratorHomePage/HomePage.vue'
+import HomePage from './components/HomePage.vue'
 export default {
   data() {
     return {
@@ -22,18 +18,28 @@ export default {
   },
   components: {
     Login,
-    TeacherHomePage,
-    StudentHomePage,
-    AdministratorHomePage,
+    HomePage,
   },
   methods: {
     setToken: function () {
       const that = this;
       // sessionStorage.setItem('token', that.token);
       // sessionStorage.getItem('token');
+    },
+    checkLoginState: function () {
+      const that = this;
+      let token = sessionStorage.getItem("token");
+      if (token) {
+        that.isShowLogin = false;
+      }
+      else {
+        that.isShowLogin = true;
+      }
     }
   },
   created() {
+    this.checkLoginState();
+    //  
   },
   watch: {
     'isShowLogin': function (value, oldValue) {

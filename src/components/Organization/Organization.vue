@@ -91,7 +91,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: 'http://localhost:8000/api/v1/organizations',
+        url: `${this.GLOBAL.localDomain}/api/v1/organizations`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -106,7 +106,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/organizations/${that.organizationId}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/organizations/${that.organizationId}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -124,7 +124,7 @@ export default {
       let id = that.organizationData[index]['id'];
       axios({
         method: 'delete',
-        url: `http://localhost:8000/api/v1/organizations/${id}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/organizations/${id}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

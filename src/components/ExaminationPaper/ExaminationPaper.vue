@@ -116,7 +116,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/papers/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/papers/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -132,13 +132,13 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/papers`,
+        url: `${this.GLOBAL.localDomain}/api/v1/papers`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.examinationPaperData = [];
         that.examinationPaperData.push(res.data.data);
       }).catch(err => {

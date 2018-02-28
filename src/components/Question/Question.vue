@@ -98,7 +98,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/questions/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/questions/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -114,13 +114,13 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/questions`,
+        url: `${this.GLOBAL.localDomain}/api/v1/questions`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.questiondData = [];
         that.questiondData.push(res.data.data);
       }).catch(err => {
@@ -139,7 +139,7 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/questions/${that.questionId}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/questions/${that.questionId}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token

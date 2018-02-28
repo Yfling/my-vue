@@ -68,7 +68,7 @@ export default {
       console.log('登录')
       axios({
         method: 'post',
-        url: 'http://localhost:8000/api/login',
+        url: `${this.GLOBAL.localDomain}/api/login`,
         headers: {
           'Content-type': 'application/json;charset=utf8',
         },
@@ -99,7 +99,7 @@ export default {
       const that = this;
       axios({
         method: 'post',
-        url: 'http://localhost:8000/api/captchas',
+        url: `${this.GLOBAL.localDomain}/api/captchas`,
         responseType: 'arraybuffer',
         headers: {
           'Content-type': 'application/x-www-form-urlencoded',

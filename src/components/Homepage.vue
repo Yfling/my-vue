@@ -1,18 +1,16 @@
 <template lang="html">
-    <login></login>
+    <navigation></navigation>
 </template>
 
 <script>
-import Login from '../components/Login'
-
+import Navigation from './Navigation'
 export default {
   data() {
     return {
     };
   },
   components: {
-    Login,
-
+    Navigation
   },
   methods: {
   },
@@ -24,7 +22,4 @@ export default {
 </script>
 
 <style lang="css">
-nav {
-  margin-bottom: 20px;
-}
 </style>

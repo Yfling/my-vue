@@ -108,7 +108,7 @@ export default {
       if (prompt) {
         axios({
           method: 'delete',
-          url: `http://localhost:8000/api/v1/tags/${id}`,
+          url: `${this.GLOBAL.localDomain}/api/v1/tags/${id}`,
           headers: {
             'Accept': 'application/json',
             'Authorization': that.token
@@ -125,7 +125,7 @@ export default {
       let id = that.searchKey;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/tags/${id}`,
+        url: `${this.GLOBAL.localDomain}/api/v1/tags/${id}`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -141,13 +141,13 @@ export default {
       const that = this;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/tags`,
+        url: `${this.GLOBAL.localDomain}/api/v1/tags`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.labelData = [];
         that.labelData.push(res.data.data);
       }).catch(err => {
@@ -169,13 +169,13 @@ export default {
       let id = that.labelData[index].id;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/applications/${id}/accept`,
+        url: `${this.GLOBAL.localDomain}/api/v1/applications/${id}/accept`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.labelData = [];
         that.labelData.push(res.data.data);
       }).catch(err => {
@@ -187,13 +187,13 @@ export default {
       let id = that.labelData[index].id;
       axios({
         method: 'get',
-        url: `http://localhost:8000/api/v1/applications/${id}/reject`,
+        url: `${this.GLOBAL.localDomain}/api/v1/applications/${id}/reject`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
         }
       }).then(res => {
-        debugger
+         
         that.labelData = [];
         that.labelData.push(res.data.data);
       }).catch(err => {

@@ -48,7 +48,7 @@ export default {
       const that = this;
       axios({
         method: 'post',
-        url: `http://localhost:8000/api/v1/notifications/`,
+        url: `${this.GLOBAL.localDomain}/api/v1/notifications/`,
         headers: {
           'Accept': 'application/json',
           'Authorization': that.token
@@ -58,7 +58,7 @@ export default {
           data: that.noticeData.data
         }
       }).then(res => {
-        debugger
+         
       }).catch(err => {
         console.log(err)
       })
