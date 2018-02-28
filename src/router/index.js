@@ -39,13 +39,15 @@ import ExaminationPaper from './../components/ExaminationPaper/ExaminationPaper'
 // 章节
 import Chapter from './../components/Chapter/Chapter'
 
+// 申请
+import ApplyFor from './../components/ApplyFor/ApplyFor'
+
 import HelloWorld from './../components/HelloWorld'
 import PersonalInformation from './../components/base/PersonalInformation'
 import InformationCenter from './../components/InformationCenter'
 import User from './../components/User'
 
 import Test from './../components/Test'
-import ApplyFor from './../components/ApplyFor'
 import Label from './../components/label'
 
 Vue.use(Router)
